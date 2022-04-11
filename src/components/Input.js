@@ -1,17 +1,20 @@
 import React, { useRef } from "react";
+import Button from "./Button";
+import Timer from "./Timer";
 import styles from "./Input.module.css";
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { wordAction } from "../Store/Slice";
 
 const Input = (props) => {
+  const [start, setStart] = useState(false);
   const inputRef = useRef();
   const [word, setWord] = useState("");
   const [indexforCompare, setIndexForCompare] = useState(1);
   const dispatch = useDispatch();
 
   const submitWord = (e) => {
-    if (e.keyCode == 32) {
+    if (e.keyCode === 32) {
       setIndexForCompare(indexforCompare + 1);
       props.curInd(indexforCompare);
       setWord("");
@@ -26,6 +29,10 @@ const Input = (props) => {
     if (unMount) {
       dispatch(wordAction.compare({ word, indexforCompare }));
       inputRef.current.focus();
+    }
+
+    if (inputRef.current.value !== "") {
+      setStart(true);
     }
     return () => (unMount = false);
   }, [word]);
@@ -42,6 +49,8 @@ const Input = (props) => {
           onKeyDown={submitWord}
         />
       </form>
+      <Timer timerStarter={start} />
+      <Button />
     </div>
   );
 };

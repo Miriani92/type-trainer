@@ -1,5 +1,6 @@
 import Input from "./components/Input";
 import { Provider } from "react-redux";
+import Results from "./components/Results";
 import store from "./Store/Store";
 import Words from "./components/Words";
 import { useState } from "react";
@@ -15,6 +16,7 @@ function App() {
       <div>
         <Words ind={index} />
         <Input curInd={getCurrentWordIndex} />
+        <Results />
       </div>
     </Provider>
   );

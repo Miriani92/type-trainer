@@ -20,7 +20,7 @@ const wordSlice = createSlice({
       if (index == 21) {
         state.allWords = generateWords();
       }
-      console.log(index);
+
       if (state.allWords[index - 1] == currentWord.trim()) {
         state.isTrue = true;
       } else {
