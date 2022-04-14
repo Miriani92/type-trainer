@@ -3,8 +3,8 @@ import styles from "./Results.module.css";
 import { useSelector } from "react-redux";
 
 const Results = () => {
-  const { count } = useSelector((state) => state.words);
-  return <div>{count}</div>;
+  const { countCorrectwords } = useSelector((state) => state.words);
+  return <div>{countCorrectwords}</div>;
 };
 
 export default Results;

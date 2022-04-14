@@ -34,6 +34,7 @@ const Input = (props) => {
 
   const submitWord = (e) => {
     if (e.keyCode === 32) {
+      dispatch(wordAction.totalSubmission());
       setIndexForCompare(indexforCompare + 1);
       props.curInd(indexforCompare);
       setWord("");
@@ -54,7 +55,6 @@ const Input = (props) => {
       <button>reset</button>
     </div>
   );
-
   return (
     <div className={styles.input}>
       <form>
@@ -72,4 +72,4 @@ const Input = (props) => {
   );
 };
 
-export default Input;
+export default React.memo(Input);

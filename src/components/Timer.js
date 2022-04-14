@@ -26,4 +26,4 @@ const Timer = (props) => {
   );
 };
 
-export default React.memo(Timer);
+export default Timer;

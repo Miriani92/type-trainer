@@ -13,7 +13,11 @@ const initialState = {
   allWords: generateWords(),
   isTrue: false,
   wordsIsupdated: false,
-  count: 0,
+  countCorrectwords: 0,
+  keyStroke: -2,
+  allSubmission: 0,
+  accuracy: 0,
+  wrongWords: 0,
 };
 const wordSlice = createSlice({
   name: "input",
@@ -22,24 +26,34 @@ const wordSlice = createSlice({
     compare(state, action) {
       const index = action.payload.indexforCompare;
       const currentWord = action.payload.word;
+      state.keyStroke += 1;
       if (index === 20) {
         state.allWords = generateWords();
       }
       if (state.allWords[index] === currentWord.trim()) {
+        state.keyStroke -= 1;
         state.isTrue = true;
-        state.count += 1;
+        state.countCorrectwords += 1;
       } else {
         state.isTrue = false;
       }
-      console.log(state.count);
     },
     reset(state) {
       state.wordsIsupdated = true;
       state.allWords = generateWords();
-      state.count = 0;
+      state.countCorrectwords = 0;
     },
     startAfterReset(state) {
       state.wordsIsupdated = false;
+    },
+    totalSubmission(state) {
+      state.allSubmission += 1;
+      state.accuracy = Math.round(
+        (state.countCorrectwords / state.allSubmission) * 100
+      );
+      state.wrongWords = state.allSubmission - state.countCorrectwords;
+
+      console.log(console.log(state.wrongWords));
     },
   },
 });
