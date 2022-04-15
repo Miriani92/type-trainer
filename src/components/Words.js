@@ -14,7 +14,7 @@ const Words = (props) => {
   }, [props.ind]);
 
   return (
-    <div className={styles.spanwrapper}>
+    <div className={styles.wordswrapper}>
       {allWords.map((word, index) => {
         return (
           <span

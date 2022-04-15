@@ -18,9 +18,9 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="holeAppwrapper">
       {stopExecute ? (
-        <div>
+        <div className="resultsWrapper">
           <Results />
           <button onClick={reload} className="relodbutton">
             Reload

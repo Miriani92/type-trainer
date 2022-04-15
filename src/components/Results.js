@@ -7,12 +7,24 @@ const Results = () => {
     (state) => state.words
   );
   return (
-    <div>
-      <p>{countCorrectwords}</p>
-      <p>{accuracy}</p>
-      <p>{keyStroke}</p>
-      <p>{wrongWords}</p>
-    </div>
+    <section className={styles.results}>
+      <div>
+        <span>Correct Words</span>
+        <span>{countCorrectwords}</span>
+      </div>
+      <div>
+        <span>Accuracy</span>
+        <span>{accuracy}%</span>
+      </div>
+      <div>
+        <span>Keystroke</span>
+        <span>{keyStroke}</span>
+      </div>
+      <div style={{ border: "none" }}>
+        <span>Wrong Words</span>
+        <span>{wrongWords}</span>
+      </div>
+    </section>
   );
 };
 

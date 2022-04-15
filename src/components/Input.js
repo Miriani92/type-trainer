@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import Timer from "./Timer";
 import styles from "./Input.module.css";
+import svgRestart from "../image/restart.svg";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { wordAction } from "../Store/Slice";
@@ -50,9 +51,11 @@ const Input = (props) => {
     dispatch(wordAction.reset());
   };
   let dis = (
-    <div>
-      <span>60</span>
-      <button>reset</button>
+    <div style={{ display: "flex" }}>
+      <div className={styles.timer}>60</div>
+      <button className={styles.button}>
+        <img src={svgRestart}></img>
+      </button>
     </div>
   );
   return (
@@ -65,6 +68,7 @@ const Input = (props) => {
           onChange={(e) => setWord(e.target.value)}
           ref={inputRef}
           onKeyDown={submitWord}
+          className={styles["real-input"]}
         />
       </form>
       {start ? <Timer timerStarter={start} reset={reset} /> : dis}

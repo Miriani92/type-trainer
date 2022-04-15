@@ -3,3 +3,29 @@
   align-items: center;
   justify-content: center;
 }
+.timer {
+  width: 70px;
+  height: 50px;
+  background-color: rgb(187, 255, 0);
+  display: inline-block;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.button {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.real-input {
+  border: transparent;
+  height: 44px;
+  width: 200px;
+  font-size: 25px;
+}

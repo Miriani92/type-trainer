@@ -4,16 +4,18 @@
   margin: 0;
   border: border-box;
 }
-
+body {
+  background-color: rgb(62, 93, 105);
+}
 .add {
-  background-color: rgba(12, 15, 51, 0.137);
+  background-color: rgba(17, 18, 19, 0.534);
+  color: white;
+  transition: ease-in 0.5s;
 }
 .success {
-  background-color: green;
+  background-color: rgb(32, 187, 32);
 }
-.falure {
-  background-color: red;
-}
+
 .relodbutton {
   cursor: pointer;
   width: 120px;
@@ -25,4 +27,18 @@
 .relodbutton:hover {
   border: 1px solid white;
   color: white;
+}
+.holeAppwrapper {
+  margin-top: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.resultsWrapper {
+  position: fixed;
+  transition: ease-in 0.3s;
+  transform: scale(1.5);
+  margin-top: 35vh;
 }

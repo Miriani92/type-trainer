@@ -1,0 +1,17 @@
+.results {
+  width: 30vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 50px);
+  background-color: rgb(0, 255, 242);
+}
+
+.results > div {
+  font-size: 25px;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10px;
+}

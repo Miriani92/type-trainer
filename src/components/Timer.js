@@ -2,12 +2,13 @@ import React, { useState, useEffect, Fragment } from "react";
 import styles from "./Timer.module.css";
 import { useDispatch } from "react-redux";
 import { wordAction } from "../Store/Slice";
+import svgRestart from "../image/restart.svg";
 
 const Timer = (props) => {
   let [countDown, setCountDown] = useState(60);
   const dispatch = useDispatch();
   let start = props.timerStarter;
-  let minute = 5;
+  let minute = 60;
 
   useEffect(() => {
     let interval;
@@ -29,8 +30,10 @@ const Timer = (props) => {
 
   return (
     <Fragment>
-      <div>{countDown}</div>
-      <button onClick={() => props.reset(false)}></button>
+      <div className={styles.timer}>{countDown}</div>
+      <button onClick={() => props.reset(false)} className={styles.button}>
+        <img src={svgRestart}></img>
+      </button>
     </Fragment>
   );
 };
