@@ -14,3 +14,15 @@
 .falure {
   background-color: red;
 }
+.relodbutton {
+  cursor: pointer;
+  width: 120px;
+  height: 40px;
+  background-color: rgb(105, 218, 105);
+  border: 1px solid rgb(8, 8, 8);
+  font-size: large;
+}
+.relodbutton:hover {
+  border: 1px solid white;
+  color: white;
+}

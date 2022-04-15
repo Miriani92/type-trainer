@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 function App() {
   const [index, setIndex] = useState(0);
-  const { wordsIsupdated } = useSelector((state) => state.words);
+  const { wordsIsupdated, stopExecute } = useSelector((state) => state.words);
 
   const getCurrentWordIndex = (idx) => {
     setIndex(idx);
@@ -13,12 +13,25 @@ function App() {
       setIndex(0);
     }
   };
+  const reload = () => {
+    window.location.reload(true);
+  };
 
   return (
     <div>
-      <Words ind={index} />
-      <Input curInd={getCurrentWordIndex} />
-      <Results />
+      {stopExecute ? (
+        <div>
+          <Results />
+          <button onClick={reload} className="relodbutton">
+            Reload
+          </button>
+        </div>
+      ) : (
+        <div>
+          <Words ind={index} />
+          <Input curInd={getCurrentWordIndex} />
+        </div>
+      )}
     </div>
   );
 }

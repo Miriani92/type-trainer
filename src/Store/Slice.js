@@ -18,6 +18,7 @@ const initialState = {
   allSubmission: 0,
   accuracy: 0,
   wrongWords: 0,
+  stopExecute: false,
 };
 const wordSlice = createSlice({
   name: "input",
@@ -52,8 +53,10 @@ const wordSlice = createSlice({
         (state.countCorrectwords / state.allSubmission) * 100
       );
       state.wrongWords = state.allSubmission - state.countCorrectwords;
-
-      console.log(console.log(state.wrongWords));
+    },
+    stopExecution(state) {
+      console.log("render");
+      state.stopExecute = !state.stopExecute;
     },
   },
 });
