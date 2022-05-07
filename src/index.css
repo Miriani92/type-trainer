@@ -10,7 +10,7 @@ body {
 .add {
   background-color: rgba(17, 18, 19, 0.534);
   color: white;
-  transition: ease-in 0.5s;
+  transition: ease-in 0.3s;
 }
 .success {
   background-color: rgb(32, 187, 32);

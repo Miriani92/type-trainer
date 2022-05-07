@@ -24,8 +24,9 @@
   cursor: pointer;
 }
 .real-input {
+  outline: none;
   border: transparent;
   height: 44px;
-  width: 200px;
+  width: 250px;
   font-size: 25px;
 }
