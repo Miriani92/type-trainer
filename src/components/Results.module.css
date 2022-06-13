@@ -1,5 +1,5 @@
 .results {
-  width: 30vw;
+  width: 45vw;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -8,7 +8,7 @@
 }
 
 .results > div {
-  font-size: 25px;
+  font-size: clamp(12px, 5vw, 24px);
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;

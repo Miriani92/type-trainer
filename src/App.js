@@ -3,6 +3,7 @@ import Results from "./components/Results";
 import Words from "./components/Words";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import Header from "./components/Header";
 function App() {
   const [index, setIndex] = useState(0);
   const { wordsIsupdated, stopExecute } = useSelector((state) => state.words);
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div className="holeAppwrapper">
+      <Header />
       {stopExecute ? (
         <div className="resultsWrapper">
           <Results />

@@ -30,3 +30,9 @@
   width: 250px;
   font-size: 25px;
 }
+
+@media screen and (max-width: 500px) {
+  .real-input {
+    width: 170px;
+  }
+} ;
